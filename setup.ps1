@@ -1,5 +1,4 @@
 echo "installing scoop"
-Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 iwr -useb get.scoop.sh | iex
 
 echo "installing neovim"
@@ -45,6 +44,7 @@ echo "installing node packages"
 npm i -g yarn nodemon concurrently tsc
 
 echo "clonning powershell profile"
+cd $HOME
 mkdir github
 git clone https://github.com/nandobfer/ps-profile
 
