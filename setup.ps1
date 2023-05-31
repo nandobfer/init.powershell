@@ -1,6 +1,9 @@
 echo "installing scoop"
 iwr -useb get.scoop.sh | iex
 
+echo "installing chocolatey"
+iwr -useb chocolatey.org/install.ps1 | iex
+
 echo "installing neovim"
 scoop install neovim gcc
 
@@ -25,9 +28,6 @@ scoop install terminal-icons
 
 echo "installing oh-my-posh"
 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
-
-echo "installing firacode font"
-sudo choco install firacodenf
 
 echo "installing vscode"
 scoop bucket add extras
@@ -55,7 +55,6 @@ cat profile.ps1 > $PROFILE
 
 echo "configuring git"
 git config credential.helper store
-$email = Read-Host -Prompt 'git email: '
-$username = Read-Host -Prompt 'git username: '
-git config --global user.email $email
-git config --global user.name $username
+
+echo "installing firacode font"
+sudo choco install firacodenf
